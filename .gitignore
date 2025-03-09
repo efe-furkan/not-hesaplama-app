@@ -1,0 +1,9 @@
+# Sistem dosyalarını ve dizinlerini yoksay
+AppData/
+Local Settings/
+*.log
+*.tmp
+*.cache
+*.jtx
+.vscode/
+.VirtualBox/

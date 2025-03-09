@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonuç</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Hesaplama Sonuçları</h1>
+    <p>Grammar Ortalaması: {{ grammar_avg }}</p>
+    <p>Writing Ortalaması: {{ writing_avg }}</p>
+    <p>Speaking Ortalaması: {{ speaking_avg }}</p>
+    <p>Final & Vizeler Ortalaması: {{ overall_avg }}</p>
+    <p class="{{ status_color }}">Durum: {{ status }}</p>
+    <a href="/">Geri Dön</a>
+</body>
+</html>
