@@ -5,14 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonuç</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .result-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        table {
+            width: 80%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        .blue {
+            color: blue;
+        }
+        
+        .green {
+            color: green;
+        }
+        
+        .red {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hesaplama Sonuçları</h1>
-    <p>Grammar Ortalaması: {{ grammar_avg }}</p>
-    <p>Writing Ortalaması: {{ writing_avg }}</p>
-    <p>Speaking Ortalaması: {{ speaking_avg }}</p>
-    <p>Final & Vizeler Ortalaması: {{ overall_avg }}</p>
-    <p class="{{ status_color }}">Durum: {{ status }}</p>
-    <a href="/">Geri Dön</a>
+    <h1>HESAPLAMA SONUÇLARI</h1>
+    
+    <div class="result-container">
+        <table>
+            <tr>
+                <th colspan="7">HESAPLAMA SONUÇLARI</th>
+            </tr>
+            <tr>
+                <td colspan="7">Grammar: {{ "%.2f"|format(grammar_avg) }} Writing: {{ "%.2f"|format(writing_avg) }} Speaking: {{ "%.2f"|format(speaking_avg) }}</td>
+            </tr>
+            <tr>
+                <td colspan="7">Vizeler Ham Ortalaması: {{ "%.2f"|format(vize_avg) }}</td>
+            </tr>
+            <tr>
+                <td colspan="7">Final Ham Ortalaması: {% if final_display == "dash" %} - {% else %}{{ "%.2f"|format(final_avg) }}{% endif %}</td>
+            </tr>
+            <tr>
+                <td colspan="7">Grammar & Final Ortalaması: {% if final_display == "dash" %} - {% else %}{{ "%.2f"|format(grammar_final_avg) }}{% endif %}</td>
+            </tr>
+            <tr>
+                <td colspan="7">Writing & Final Ortalaması: {% if final_display == "dash" %} - {% else %}{{ "%.2f"|format(writing_final_avg) }}{% endif %}</td>
+            </tr>
+            <tr>
+                <td colspan="7">Speaking & Final Ortalaması: {% if final_display == "dash" %} - {% else %}{{ "%.2f"|format(speaking_final_avg) }}{% endif %}</td>
+            </tr>
+            <tr>
+                <td colspan="7">Yıl Sonu Notu: {% if final_display == "dash" %} - {% else %}{{ "%.2f"|format(year_end_grade) }}{% endif %}</td>
+            </tr>
+            <tr>
+                <td colspan="7">Durum: <span class="{{ status_color }}">{{ status }}</span></td>
+            </tr>
+            <tr>
+                <td colspan="7">Kalma Nedeni: <span class="blue">{{ reason }}</span></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div style="text-align: center;">
+        <a href="/">Geri Dön</a>
+    </div>
 </body>
 </html>
