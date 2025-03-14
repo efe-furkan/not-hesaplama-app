@@ -5,94 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Not Hesaplama</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <style>
-        .input-group {
-            display: flex;
-            gap: 10px; /* Kutucuklar arası boşluk */
-            margin-bottom: 20px; /* Gruplar arası boşluk */
-        }
-        .input-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .input-group input {
-            width: 100px; /* Kutucukların genişliği */
-        }
-    </style>
 </head>
 <body>
-    <h1>Not Hesaplama</h1>
+    <div class="header-container">
+        <h1>Not Hesaplama</h1>
+        <div class="header-divider"></div>
+    </div>
+    
     <form method="POST">
-        <h2>Grammar Notları</h2>
-        <div class="input-group">
-            <div>
-                <label>1. Vize</label>
-                <input type="number" name="grammar1" placeholder="1. Vize" required value="{{ session.get('grammar_scores', ['', '', '', ''])[0] }}">
-            </div>
-            <div>
-                <label>2. Vize</label>
-                <input type="number" name="grammar2" placeholder="2. Vize" required value="{{ session.get('grammar_scores', ['', '', '', ''])[1] }}">
-            </div>
-            <div>
-                <label>3. Vize</label>
-                <input type="number" name="grammar3" placeholder="3. Vize" required value="{{ session.get('grammar_scores', ['', '', '', ''])[2] }}">
-            </div>
-            <div>
-                <label>4. Vize</label>
-                <input type="number" name="grammar4" placeholder="4. Vize" required value="{{ session.get('grammar_scores', ['', '', '', ''])[3] }}">
-            </div>
-        </div>
-
-        <h2>Writing Notları</h2>
-        <div class="input-group">
-            <div>
-                <label>1. Vize</label>
-                <input type="number" name="writing1" placeholder="1. Vize" required value="{{ session.get('writing_scores', ['', '', '', ''])[0] }}">
-            </div>
-            <div>
-                <label>2. Vize</label>
-                <input type="number" name="writing2" placeholder="2. Vize" required value="{{ session.get('writing_scores', ['', '', '', ''])[1] }}">
-            </div>
-            <div>
-                <label>3. Vize</label>
-                <input type="number" name="writing3" placeholder="3. Vize" required value="{{ session.get('writing_scores', ['', '', '', ''])[2] }}">
-            </div>
-            <div>
-                <label>4. Vize</label>
-                <input type="number" name="writing4" placeholder="4. Vize" required value="{{ session.get('writing_scores', ['', '', '', ''])[3] }}">
+        <div class="course-section">
+            <h2>Grammar Notları</h2>
+            <div class="input-group">
+                <div>
+                    <label>1. Vize</label>
+                    <input type="number" name="grammar1" placeholder="1. Vize" required value="{{ session.get('grammar_scores', ['', '', '', '', ''])[0] }}">
+                </div>
+                <div>
+                    <label>2. Vize</label>
+                    <input type="number" name="grammar2" placeholder="2. Vize" required value="{{ session.get('grammar_scores', ['', '', '', '', ''])[1] }}">
+                </div>
+                <div>
+                    <label>3. Vize</label>
+                    <input type="number" name="grammar3" placeholder="3. Vize" required value="{{ session.get('grammar_scores', ['', '', '', '', ''])[2] }}">
+                </div>
+                <div>
+                    <label>4. Vize</label>
+                    <input type="number" name="grammar4" placeholder="4. Vize" required value="{{ session.get('grammar_scores', ['', '', '', '', ''])[3] }}">
+                </div>
+                <div>
+                    <label>Final</label>
+                    <input type="number" name="grammar5" placeholder="Grammar Final" required value="{{ session.get('grammar_scores', ['', '', '', '', ''])[4] }}">
+                </div>
             </div>
         </div>
 
-        <h2>Speaking Notları</h2>
-        <div class="input-group">
-            <div>
-                <label>1. Vize</label>
-                <input type="number" name="speaking1" placeholder="1. Vize" required value="{{ session.get('speaking_scores', ['', '', '', ''])[0] }}">
-            </div>
-            <div>
-                <label>2. Vize</label>
-                <input type="number" name="speaking2" placeholder="2. Vize" required value="{{ session.get('speaking_scores', ['', '', '', ''])[1] }}">
-            </div>
-            <div>
-                <label>3. Vize</label>
-                <input type="number" name="speaking3" placeholder="3. Vize" required value="{{ session.get('speaking_scores', ['', '', '', ''])[2] }}">
-            </div>
-            <div>
-                <label>4. Vize</label>
-                <input type="number" name="speaking4" placeholder="4. Vize" required value="{{ session.get('speaking_scores', ['', '', '', ''])[3] }}">
-            </div>
-        </div>
-
-        <h2>Final Notu</h2>
-        <div class="input-group">
-            <div>
-                <label>Final</label>
-                <input type="number" name="final" placeholder="Final" required value="{{ session.get('final_score', '') }}">
+        <div class="course-section">
+            <h2>Writing Notları</h2>
+            <div class="input-group">
+                <div>
+                    <label>1. Vize</label>
+                    <input type="number" name="writing1" placeholder="1. Vize" required value="{{ session.get('writing_scores', ['', '', '', '', ''])[0] }}">
+                </div>
+                <div>
+                    <label>2. Vize</label>
+                    <input type="number" name="writing2" placeholder="2. Vize" required value="{{ session.get('writing_scores', ['', '', '', '', ''])[1] }}">
+                </div>
+                <div>
+                    <label>3. Vize</label>
+                    <input type="number" name="writing3" placeholder="3. Vize" required value="{{ session.get('writing_scores', ['', '', '', '', ''])[2] }}">
+                </div>
+                <div>
+                    <label>4. Vize</label>
+                    <input type="number" name="writing4" placeholder="4. Vize" required value="{{ session.get('writing_scores', ['', '', '', '', ''])[3] }}">
+                </div>
+                <div>
+                    <label>Final</label>
+                    <input type="number" name="writing5" placeholder="Writing Final" required value="{{ session.get('writing_scores', ['', '', '', '', ''])[4] }}">
+                </div>
             </div>
         </div>
 
-        <button type="submit">Hesapla</button>
+        <div class="course-section">
+            <h2>Speaking Notları</h2>
+            <div class="input-group">
+                <div>
+                    <label>1. Vize</label>
+                    <input type="number" name="speaking1" placeholder="1. Vize" required value="{{ session.get('speaking_scores', ['', '', '', '', ''])[0] }}">
+                </div>
+                <div>
+                    <label>2. Vize</label>
+                    <input type="number" name="speaking2" placeholder="2. Vize" required value="{{ session.get('speaking_scores', ['', '', '', '', ''])[1] }}">
+                </div>
+                <div>
+                    <label>3. Vize</label>
+                    <input type="number" name="speaking3" placeholder="3. Vize" required value="{{ session.get('speaking_scores', ['', '', '', '', ''])[2] }}">
+                </div>
+                <div>
+                    <label>4. Vize</label>
+                    <input type="number" name="speaking4" placeholder="4. Vize" required value="{{ session.get('speaking_scores', ['', '', '', '', ''])[3] }}">
+                </div>
+                <div>
+                    <label>Final</label>
+                    <input type="number" name="speaking5" placeholder="Speaking Final" required value="{{ session.get('speaking_scores', ['', '', '', '', ''])[4] }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button type="submit">Hesapla</button>
+        </div>
     </form>
 </body>
 </html>

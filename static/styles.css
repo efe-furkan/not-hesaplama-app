@@ -5,10 +5,14 @@ body {
 
 h1 {
     color: #333;
+    text-align: center;
 }
 
 form {
     margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 input {
@@ -29,7 +33,6 @@ button:hover {
     background-color: #218838;
 }
 
-
 p {
     font-size: 18px;
 }
@@ -40,4 +43,182 @@ p {
 
 .green {
     color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+.result-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+table {
+    width: 80%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Additional styles from index.html */
+.header-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-divider {
+    width: 50px;
+    border-top: 2px solid #333;
+    margin: 10px auto;
+}
+
+.course-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px; /* Kutucuklar arası boşluk */
+    margin-bottom: 20px; /* Gruplar arası boşluk */
+    justify-content: center; /* Kutucukları ortala */
+    flex-wrap: wrap; /* Mobil için satır sonu ekle */
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center; /* Etiketleri ortala */
+}
+
+.input-group input {
+    width: 100px; /* Kutucukların genişliği */
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 25px; /* Butonu 5px daha geniş yap */
+}
+
+/* MOBİL UYUMLULUK İÇİN YENİ EKLEMELER */
+@media screen and (max-width: 768px) {
+    body {
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    .input-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .input-group > div {
+        flex-basis: calc(50% - 10px);
+        margin-bottom: 10px;
+    }
+    
+    input {
+        width: 90%;
+        max-width: 100px;
+        margin: 3px auto;
+    }
+    
+    table {
+        width: 95%;
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 6px 4px;
+    }
+}
+
+/* DAHA KÜÇÜK MOBİL CİHAZLAR İÇİN EK DÜZENLEMELER */
+@media screen and (max-width: 480px) {
+    .input-group > div {
+        flex-basis: calc(50% - 5px);
+    }
+    
+    input {
+        width: 90%;
+        padding: 6px;
+    }
+    
+    button {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    table {
+        width: 100%;
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 4px 2px;
+    }
+}
+
+/* EN KÜÇÜK MOBİL CİHAZLAR İÇİN EKSTRA DÜZENLEMELER */
+@media screen and (max-width: 320px) {
+    .input-group > div {
+        flex-basis: 100%;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    h2 {
+        font-size: 18px;
+    }
+}
+
+/* SONUÇ SAYFASI MOBİL UYUMLULUK */
+@media screen and (max-width: 768px) {
+    .result-container table td {
+        font-size: 13px;
+    }
+    
+    .result-container table th {
+        font-size: 14px;
+    }
 }
