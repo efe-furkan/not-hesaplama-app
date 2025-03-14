@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonuç</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .result-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        table {
+            width: 80%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        .blue {
+            color: blue;
+        }
+        
+        .green {
+            color: green;
+        }
+        
+        .red {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h1>HESAPLAMA SONUÇLARI</h1>
